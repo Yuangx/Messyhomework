@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body{ margin: 0; font-size: 16px; }
+        div { width: 200px; height: 200px; }
+        #outer { background: #f00}
+        #inner {
+            position: relative;
+            top: 100px;
+            left: 100px;
+            z-index: -1;
+            background: #0f0;
+        //css of inner
+        }
+        input { outline: none; }
+        input[type="text"] {
+            padding: 4px 4px 5px 4px;
+            width: 190px;
+            height: 16px;
+            color: #ccc;
+            border: 1px #666 solid;
+        }
+    </style>
+</head>
+<body>
+<div id="outer">
+    <div id="inner">
+    </div>
+</div><!--outer-->
+<div style="float: left; width: 206px;">
+    <input id="txt" type="text" onclick="c()" value="please input your id">
+</div>
+<input type="button" value="click me">
+</body>
+<ml>
+    <script>
+        function c() {
+            document.getElementById("txt").style.border="1px #333 solid";
+            document.getElementById("txt").value="";
+            document.getElementById("txt").style.color="#333";
+        }
+    </script>

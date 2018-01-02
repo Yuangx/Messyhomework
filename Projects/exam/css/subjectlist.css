@@ -1,0 +1,33 @@
+@charset "UTF-8";
+body {
+	margin: 0;
+	font-size: 16px;
+}
+table {
+	margin: 0 auto;
+	width: 1200px;
+}
+th { border-bottom: 2px #333 solid; }
+tbody>tr { cursor: default; }
+tbody>tr:hover { background: #bff5b9; }
+td { border-bottom: 1px #333 dotted; }
+
+.showText { width: 200px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.id       { width: 40px;  text-align: center; }
+.type     { width: 40px;  text-align: center; }
+.question { width: 200px; }
+.A        { width: 200px; }
+.B        { width: 200px; }
+.C        { width: 200px; }
+.D        { width: 200px; }
+.answer   { width: 40px;  text-align: center; }
+.delete   { width: 40px;  text-align: center; }
+.update   { width: 40px;  text-align: center; }
+
+.container {
+	margin: 0 auto;
+	padding: 6px 0;
+	width: 1220px;
+	height: 24px;
+	border-bottom: 2px #333 solid;
+}

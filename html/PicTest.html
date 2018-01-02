@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="../JavaScript/jquery-3.2.1.js"></script>
+    <title>Test</title>
+</head>
+<body>
+<img src="../Picture/White.png" onmouseover="change(1)" onmouseout="change(2)" id="img">
+</body>
+</html>
+
+<script>
+    function change(a){
+        if(a==1)
+            document.all.img.src="../Picture/Red.png";
+        if(a==2)
+            document.all.img.src="../Picture/White.png";
+    }
+</script>

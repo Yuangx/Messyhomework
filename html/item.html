@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <script src="../JavaScript/jquery-3.2.1.js"></script>
+    <style>
+        body {
+            margin: 0;
+            font-size: 62.5%;
+            background: #ffffff;
+        }
+        #welcome {
+            clear: both;
+            width: 100%;
+            height: 2.5em;
+            background: #efefef;
+            border-bottom: 1px #666666 solid;
+        }
+        #welcome-center {
+            position: relative;
+            top: 3px;
+            margin: auto;
+            width: 102.4em;
+            text-align: center;
+        }
+        #welcome-txt {
+            text-align: left;
+            font-size: 1.4em;
+            color: #333333;
+        }
+        #nav {
+            width: 102.4em;
+
+            text-align: center;
+        }
+        .nav-list {
+            margin: 0;
+            padding: 0;
+            width: 102.4em;
+        }
+        .nav-list-item {
+            float: left;
+            margin: 0;
+            padding: 0;
+            width: 10em;
+        }
+    </style>
+</head>
+<body>
+
+<div id="header">
+    <div id="welcome">
+        <div id="welcome-center">
+            <div id="welcome-txt">欢迎使用在线选课系统 v1.0</div>
+        </div>
+    </div>
+    <!--<div id="logo"></div>-->
+    <div id="nav">
+        <ul id=nav-list">
+            <li class="nav-list-item">item 1</li>
+            <li class="nav-list-item">item 2</li>
+            <li class="nav-list-item">item 3</li>
+            <li class="nav-list-item">item 4</li>
+            <li class="nav-list-item">item 5</li>
+            <li class="nav-list-item">item 6</li>
+        </ul>
+    </div>
+</div>
+</body>
+
+</html>
+
+<script>
+//    $( document ).ready( function() {
+        $( ".nav-list-item" ).mouseover( function () {
+            $( this ).css( {"background" : "#ccc","color" : "#000"} );
+        } )
+//    } )
+    $( ".nav-list-item" ).mouseout( function () {
+        $( this ).css( {"background" : "#fff","color" : "#000"} );
+    })
+</script>

@@ -1,0 +1,57 @@
+@charset "UTF-8";
+table {
+	margin: 0 auto;
+	width: 1100px;
+}
+thead>tr>th {
+	height: 40px;
+	text-align:center;
+	font-weight: bold;
+	border-bottom: 2px #999 solid;
+}
+tbody>tr:hover {
+	background: #efefef;
+	cursor: default;
+}
+td {
+	border-bottom: 1px #999 dotted;
+}
+.question>div {
+	width: 400px;
+	white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.A>div {
+	width: 40px;
+	white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.B>div {
+	width: 40px;
+	white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.C>div {
+	width: 40px;
+	white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.D>div {
+	width: 40px;
+	white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.id { width: 40px; text-align: center; }
+.type { width: 40px; text-align: center;}
+.question { width: 400px;}
+.A { width: 40px;}
+.B { width: 40px;}
+.C { width: 40px;}
+.D { width: 40px;}
+.answer { width: 40px; text-align: center;}
+.button { width: 60px; text-align: center;}
