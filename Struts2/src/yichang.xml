@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>	
+	<!-- yichang.xml中的action配置 -->
+		<package name="com.yuan.demo05.yichang" extends="struts-default">
+		<!-- 全局跳转 -->
+		<global-results>
+			<result name ="database">/demo04/database.jsp</result>
+		</global-results>
+		<!-- 全局异常 -->
+		<global-exception-mappings>
+			<exception-mapping result = "database" exception = "java.lang.Exception"></exception-mapping>
+		</global-exception-mappings>
+		
+		
+		
+		<action name ="yichang" class = "com.yuan.demo05.YiChang" method = "yiChangChuLi">
+		<!-- 局部异常配置-->
+			<!-- 局部异常处理result = “异常跳转界面” exception = “异常全包名” >
+			<exception-mapping result ="result123" exception = "java.lang.NumberFormatException"></exception-mapping>
+			<result name = "result123">/demo05/result.jsp</result>
+			-->
+			
+		</action>
+	
+	</package>
+</struts>

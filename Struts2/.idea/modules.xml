@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/WebRoot/WebRoot.iml" filepath="$PROJECT_DIR$/WebRoot/WebRoot.iml" />
+      <module fileurl="file://$PROJECT_DIR$/WebWo.iml" filepath="$PROJECT_DIR$/WebWo.iml" />
+    </modules>
+  </component>
+</project>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name="com.yuan.demo08.*" extends="struts-default">
+		<!-- 自定义拦截器 -->
+		<interceptors>
+			<!-- 配置自定义拦截器 -->
+			<interceptor name="myinterceptor" class="com.yuan.demo08.MyInterceptor"></interceptor>
+			<!-- 配置登陆验证拦截器 -->
+			<interceptor name="validateLogin" class="com.yuan.demo08.Validatelogin"></interceptor>
+			<!-- 指定拦截器栈，必须引用默认拦截器来创建自定义拦截器 -->
+			<interceptor-stack name="myinterceptorStack">
+				<!-- 引用默认拦截器defaultStack是固定写死的，是struts框架提供的 -->
+				<interceptor-ref name="defaultStack"/>
+				<!-- 引用自定义拦截器 -->
+				<interceptor-ref name="nyerceptor"/>
+				<!-- 引用登陆验证拦截器 -->
+				<interceptor-ref name="validateLogin"/>
+			</interceptor-stack>
+		</interceptors>
+		<!-- 全局跳转 -->
+		<global-results>
+			<result name="noLogin">/demo08/nologin.jsp</result>
+		</global-results>
+		
+		<!-- 配置loginAction -->
+		<action name="myInter" class="com.yuan.demo08.LoginAction" method="execute">
+			<result name="demo08">/demo08/demo08.jsp</result>
+			<result name="input">/demo08/login.jsp</result>
+		</action>
+		<!-- 配置Action必须在自定义拦截器包里 -->
+		<action name="myInter" class="com.yuan.demo08.Text" method="execute">
+			<result name="success">/demo08/success.jsp</result>
+			<!-- 引用拦截器 -->
+			<interceptor-ref name="myinterceptorStack"></interceptor-ref>
+		</action>
+	</package>	
+</struts>

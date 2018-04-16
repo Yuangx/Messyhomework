@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+
+	<package name="test" extends="struts-default">
+	
+		<action name="test" class="test.User">
+			<result name="result">/main/MyJsp2.jsp</result>
+		</action>
+
+		<action name="sc" class="test.Person">
+			<param name="paraml">param</param>
+			<result name="show">/demo2/MyJsp2.jsp</result>
+		</action>
+		
+	</package>
+	
+	<constant name="struts.custom.i18n.resources" value="message"/>
+    <constant name="struts.i18n.encoding" value="UTF-8" />
+	
+	<package name="com.yuan.demo3.MoXingDriven" extends="struts-default">
+		<interceptors>
+			<!-- 配置demo03Inter的拦截器 -->
+			<interceptor name="demo03Inter" class="com.hanzhen.demo03.Demo3Inter"></interceptor>
+			<!-- 配置拦截器栈 -->
+			<interceptor-stack name="demo03InterStack">
+				<!-- 先引用默认的拦截器 -->
+				<interceptor-ref name="defaultStack"></interceptor-ref>
+				<!--  再引用自己的拦截器-->
+				<interceptor-ref name="demo03Inter"></interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+		
+		<action name="demo03" class="com.yuan.demo03.MoXingDriven">
+		<!-- 引用自定义的拦截器栈 -->
+		<interceptor-ref name="demo03InterStack"></interceptor-ref>
+		</action>
+	</package>
+	
+	<package name="com.yuan.example1" extends="struts-default">
+		<action name="add" class="com.yuan.example1.DatabaseAction" method = "add"></action>
+		<action name="get" class="com.yuan.example1.DatabaseAction" method = "get"></action>
+	</package>
+	
+	<package name="com.yuan.perimeter" extends="struts-default">
+		<action name="EntityAction" class="com.yuan.perimeter.EntityAction"></action>
+	</package>
+	
+	<!-- 导入到structs.xml核心文件夹中来 -->
+	<include file ="yichang.xml"></include>
+	<include file ="demo06.xml"></include>
+	<include file ="demo08.xml"></include>
+	
+	<!-- 配置上传 -->
+	<package name="com.yuan.demo10.FileUpload" extends="structs-default">
+		<action name="upAction" class="com.yuan.demo10.FileUpload" method="upload">
+		</action>
+	</package>
+	
+</struts>

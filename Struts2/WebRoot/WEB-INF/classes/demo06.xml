@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1 //EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<package name = "com.yuan.demo06.Demo06" extends ="struts-default">
+		<action name = "rs_type" class = "com.yuan.demo06.Demo06" method = "execute">
+			<!-- chain 类型，引用下面配置的chain链中的chain -->
+			<result name ="rs_chain" type = "chain">
+				<param name ="actionName">ac_chain</param>
+			</result>
+			<!-- redirect类型 可以带参数 -->
+			<result name = "rs_redirect" type ="redirect">
+				<!-- 还可以写成路径，以下写法是通过标签注入 -->
+				<param name ="location">/demo06/wangzhan.jsp?</param>
+				<param name ="wangzhan1">xxx</param>
+				<param name ="wangzhan2">123</param>
+			</result>
+			
+			<!-- redirectAction,引用下面配置的chain链中的ac_reAc -->
+			<result name ="rs_redirectAction" type = "redirectAction">
+				<param name = "actionName">ac_reAc</param>
+			</result>
+			<!-- plainText,展示页面的文本信息 -->
+			<result name = "rs_plainText" type = "plainText">
+				<param name = "location">/demo06/wangzhan.jsp</param>
+				<param name = "charSet">UTF-8</param>
+			</result>
+			
+		</action>
+		<!-- chain 链 -->
+		<action name = "ac_chain" class = "com.yuan.demo06.Demo06" method = "chain">
+			<result name ="demo02_result">/demo02/shangchuan.jsp</result>
+		</action>
+		<!-- 普通Action配置，不共享请求数据 -->
+		<action name = "ac_reAc" class ="com.yuan.demo06.Demo06" method = "reAction">
+			<result name = "input">/demo04/database.jsp</result>
+		</action>
+	</package>
+</struts>
